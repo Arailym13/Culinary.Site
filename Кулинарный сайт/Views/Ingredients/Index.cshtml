@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Кулинарный_сайт.Models.Ingredients>
+ 
+@{
+    ViewBag.Title = "ingredient";
+}
+ <h2>Ingredients</h2>
+
+ <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                <div>
+                    <a href="@Url.Action("Index", new { sortBy = "" })">Sort by Title (A-Z)</a> |
+                    <a href="@Url.Action("Index", new { sortBy = "1" })">Sort by Title (Z-A)</a>
+                </div>
+            </th>
+        </tr>
+    </thead>
+     <tbody>
+   

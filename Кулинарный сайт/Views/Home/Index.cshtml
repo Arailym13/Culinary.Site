@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Magic Kitchen ";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"     style=" padding-top: 120px;">
+            <!-- Text content goes here -->
+             <h1 class="display-4">Магия в каждом блюде!</h1>
+             <p> В Magic Kitchen мы применяем проверенные временем методы приготовления, чтобы предложить уникальные вкусы и текстуры. Наш ассортимент блюд создан с любовью и включает в себя разнообразные кулинарные шедевры со всего мира, разработанные в соответствии с высокими стандартами качества. Мы не ищем легких путей в наших кулинарных процессах, потому что мы верим, что именно в труде кроется настоящая магия вкуса и качества!
+             </p>    
+        </div>
+        <div class="col-md-6">
+            <!-- Image content goes here -->
+            <img src="~/img/picture1.jpeg" alt="Magic Kitchen1" style="max-width: 100%; height: 500px;">
+        </div>
+    </div>
+</div>
+
+  <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal();">&times;</span>
+            <h2>Login</h2>
+            <form method="post">
+                <div>
+                    <label for="log_email">Электронный адрес</label>
+                    <input id="log_email" type="text" name="email" maxlength="50" required>
+                </div>
+                <div>
+                    <label for="log_password">Пароль</label>
+                    <input id="log_password" type="password" name="password" maxlength="50" required>
+                </div>
+                <button type="submit">Войти</button>   
+            </form>
+        </div>
+    </div>
+
+    <script>
+    function showModal() {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Закрытие модального окна при клике вне его области
+    window.onclick = function(event) {
+        var modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+    </script>

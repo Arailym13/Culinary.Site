@@ -1,0 +1,20 @@
+﻿@model List<Кулинарный_сайт.Models.Ingredients>
+@{
+    ViewData["Title"] = "Ingredients";
+}
+
+
+<h1>Ингредиенты</h1>
+
+@foreach (var ingredient in Model)
+{
+        <div class="ingredient-block">
+            <p>@ingredient.Name<p/>
+            <p><strong>Калорийность (ККАЛ):</strong> @ingredient.Calorie_content</p>
+            <p><strong>Белки (ГРАММ):</strong> @ingredient.Squirrels</p>
+            <p><strong>Жиры (ГРАММ):</strong> @ingredient.Fats</p>
+            <p><strong>Углеводы (ГРАММ):</strong> @ingredient.Carbohydrates</p>
+            <p><strong>Гликемический индекс:</strong> @ingredient.Glycemic_index</p>
+        </div>
+       
+}

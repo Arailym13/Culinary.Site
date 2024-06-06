@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<div class="recipes">
+    <div class="recipes-text">
+        <h1>Pецепты</h1>
+        <p>Вкусные идеи для каждого приема пищи.</p>
+    </div>
+    <div class="recipes-block">
+        <div>
+             <img src="~/img/breakfast.jpeg" alt="breakfast"/> 
+             <a class="block" asp-area="" asp-controller="Home" asp-action="Breakfast">Завтрак</a>
+             <p> 07:00 - 10:00</p>
+             
+        </div>
+        <div>
+            <img src="~/img/lunch.jpeg" alt="breakfast"/> 
+            <a class="block" asp-area="" asp-controller="Home" asp-action="lunch">Обед</a>
+            <p> 12:00 - 14:00</p>
+        </div>
+        <div>
+            <img src="~/img/dinner.jpeg" alt="breakfast"/> 
+            <a class="block" asp-area="" asp-controller="Home" asp-action="Dinner">Ужин</a>
+            <p> 18:00 - 20:00</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    
+}
+
+.navbar-brand img {
+    height: 100px;
+}
+
+
+.box_user {
+    margin: 10px;
+    
+}
+
+.menu_el.element {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-color: #D2B48C;
+    color: #D2B48C;
+    border: 2px solid;
+    border-radius: 13px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .menu_el.element:hover {
+        background-color: #D2B48C;
+        color:white;
+    }
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+
+
+.recipes-text {
+    width: 503px;
+    padding-left:50px
+}
+    .recipes-text h1 {
+        color: #404040;
+        font-size: 47px;
+        font-weight: 400;
+        line-height: 71px;
+        margin: 0;
+    }
+    .recipes-text p {
+        color: #404040;
+        font-size: 19px;
+        font-weight: 400;
+        Line-height: 27.71px;
+    }
+
+.recipes-block {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+    padding: 20px;
+    
+}
+    .recipes-block div {
+        border: 1px solid #D2B48C;
+        border-radius: 28px;
+        margin-right: 15px;
+        width: 350px;
+        height: 400px;
+        font-size: 30px;
+        box-shadow: 0 0 2px 2px #D2B48C;
+    }
+
+.recipes-block :hover {
+        background-color: #D2B48C;
+ }
+.recipes-block img {
+        width: 250px;
+        margin-top: 50px;
+        margin-left: 50px;
+
+}
+.recipes-block a {
+        color: #404040;
+        padding-left: 50px;
+        text-decoration:none;
+}
+.recipes-block p {
+        font-size: 18px;
+        color: #767676;
+        padding-left: 50px;
+}
+.container-fluid{
+    margin-left:95px;
+    margin-right:95px
+}
