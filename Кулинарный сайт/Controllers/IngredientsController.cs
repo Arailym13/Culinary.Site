@@ -54,7 +54,7 @@ namespace Кулинарный_сайт.Controllers
         public async Task<ActionResult> Create()
         {
             // Получаем список ингредиентов и передаем его в представление через ViewBag
-            ViewBag.IngredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
+            //ViewBag.IngredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
             return View();
         }
 
@@ -119,7 +119,7 @@ namespace Кулинарный_сайт.Controllers
         }
 
         // POST: IngredientsController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
