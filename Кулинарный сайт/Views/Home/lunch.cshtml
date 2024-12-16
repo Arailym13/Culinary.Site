@@ -5,3 +5,40 @@
 
 <h1>lunch</h1>
 
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ингредиенты омлета</title>
+    <script>
+        function calculateCalories() {
+            const ingredients = document.querySelectorAll('.ingredient');
+            let totalCalories = 0;
+
+            ingredients.forEach(function(ingredient) {
+                totalCalories += parseInt(ingredient.dataset.calories);
+            });
+
+            document.getElementById('total-calories').textContent = totalCalories;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Ингредиенты омлета</h1>
+
+    <ul>
+        <li class="ingredient" data-calories="150">Яйца (2 шт.) - 150 калорий</li>
+        <li class="ingredient" data-calories="20">Молоко (50 мл) - 20 калорий</li>
+        <li class="ingredient" data-calories="30">Масло (10 г) - 30 калорий</li>
+        <li class="ingredient" data-calories="40">Томаты (50 г) - 40 калорий</li>
+        <li class="ingredient" data-calories="70">Сыр (30 г) - 70 калорий</li>
+        <li class="ingredient" data-calories="25">Зелень (по вкусу) - 25 калорий</li>
+    </ul>
+
+    <h2>Общее количество калорий: <span id="total-calories">0</span> калорий</h2>
+
+    <button onclick="calculateCalories()">Рассчитать калории</button>
+
+</body>
+</html>

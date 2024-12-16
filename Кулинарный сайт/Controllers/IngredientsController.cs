@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;    
 using Microsoft.AspNetCore.Mvc;
 using Кулинарный_сайт.Data;
 using Кулинарный_сайт.Interfaces;
@@ -16,10 +16,6 @@ namespace Кулинарный_сайт.Controllers
         {
             _ingredientsService = ingredientsService;
         }
-
-
-
-        // GET: IngredientsController
         public async Task<ActionResult> Index(string? sortBy)
         {
             switch (sortBy)
@@ -34,8 +30,6 @@ namespace Кулинарный_сайт.Controllers
             // случай для обработки неизвестных значений
             return View(await _ingredientsService.GetAllIngredientsAsync());
         }
-
-        // GET: IngredientsController/Details/5
         //Detailed action to view the ingredient
         public async Task<ActionResult> Details(int id)
         {
@@ -48,8 +42,6 @@ namespace Кулинарный_сайт.Controllers
                 return View(ingredient);
             }
         }
-
-        // GET: IngredientsController/Create
         // Create actions to create a new ingredient
         public async Task<ActionResult> Create()
         {
@@ -57,7 +49,6 @@ namespace Кулинарный_сайт.Controllers
             //ViewBag.IngredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Ingredients ingredient)
@@ -72,25 +63,19 @@ namespace Кулинарный_сайт.Controllers
             // Если модель не валидна, возвращаем представление для исправления ошибок
             // Передаем в представление список ингредиентов и выбранное значение IngredientId для сохранения его в форме
             ViewBag.IngredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
-
             return View(ingredient);
-
         }
-
-        // GET: IngredientsController/Edit/5
         // Edit actions to edit an existing ingredient
         public async Task<ActionResult> Edit(int id)
         {
             var ingredient = await _ingredientsService.GetIngredientsByIdAsync(id);
             if (ingredient == null)
             {
-                return View();
+               return View();
             }
             ViewBag.IngrredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
             return View(ingredient);
         }
-
-        // POST: IngredientsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Ingredients ingredient)
@@ -101,12 +86,8 @@ namespace Кулинарный_сайт.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IngredientId = new SelectList(await _ingredientsService.GetAllIngredientsAsync(), "Id", "Name");
-
             return View(ingredient);
-
         }
-
-        // GET: IngredientsController/Delete/5
         // Delete actions to delete an existing ingredient
         public async Task<ActionResult> Delete(int id)
         {
@@ -117,17 +98,12 @@ namespace Кулинарный_сайт.Controllers
             }
             return View(ingredient);
         }
-
-        // POST: IngredientsController/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await _ingredientsService.DeleteIngredientsAsync(id);
-            
                 return RedirectToAction("Index");
-
-            
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Кулинарный_сайт.Models
 {
     public class Ingredients

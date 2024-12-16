@@ -14,8 +14,7 @@ namespace Кулинарный_сайт
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-             //object value = services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
-
+    
             // установка конфигурации подключения
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => //CookieAuthenticationOptions

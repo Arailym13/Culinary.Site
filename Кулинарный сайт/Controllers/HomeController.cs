@@ -23,19 +23,9 @@ namespace Кулинарный_сайт.Controllers
 
         public IActionResult Index()
         {
-
-            //if (User.Identity.IsAuthenticated)
-            //{
-            //    return Content(User.Identity.Name);
-            //}
-            //return Content("не аутентифицирован");
             return View();
         }
-        public IActionResult About()
-        {
-            return Content("Authorized");
-        }
-
+      
         public IActionResult Privacy()
         {
             return View();
@@ -43,53 +33,8 @@ namespace Кулинарный_сайт.Controllers
         public async Task<IActionResult> Ingredients()
         {
 
-            //var IngredientsList = new List<Ingredients>
-
-            //{
-            //    new Ingredients
-            //    {
-            //        Name = "Черника",
-            //        Calorie_content = 175,
-            //        Squirrels = 0,
-            //        Fats = 0,
-            //        Carbohydrates = 45,
-            //        Glycemic_index = 53
-            //    },
-            //    new Ingredients 
-            //    {
-            //        Name = "Фундук",
-            //        Calorie_content = 628,
-            //        Squirrels = 15,
-            //        Fats = 60.8,
-            //        Carbohydrates = 7,
-            //        Glycemic_index = 15
-            //    },
-            //     new Ingredients
-            //    {
-            //        Name = "Творог",
-            //        Calorie_content = 82,
-            //        Squirrels = 11,
-            //        Fats = 2.3,
-            //        Carbohydrates = 4.31,
-            //        Glycemic_index = 30
-            //    },
-            //     new Ingredients 
-            //     {
-            //         Name = "Рукола",
-            //        Calorie_content = 24,
-            //        Squirrels = 2,
-            //        Fats = 1,
-            //        Carbohydrates = 2,
-            //        Glycemic_index = 32
-            //     }
-
-            //};
-            //_ctx.Ingredients.AddRange(IngredientsList);
-            //_ctx.SaveChanges();
-
-          //  var ingr = await _ingredientsService.GetAllIngredientsAsync();
-            //IngredientsList = GetReverse(IngredientsList);
-            return View();
+           var IngredientsList = await _ingredientsService.GetAllIngredientsAsync();
+            return View(IngredientsList);
         }
 
         private List<Ingredients> GetReverse(List<Ingredients> ingredients)
@@ -119,3 +64,48 @@ namespace Кулинарный_сайт.Controllers
 
   
 }
+
+
+//var IngredientsList = new List<Ingredients>
+
+//{
+//    new Ingredients
+//    {
+//        Name = "Черника",
+//        Calorie_content = 175,
+//        Squirrels = 0,
+//        Fats = 0,
+//        Carbohydrates = 45,
+//        Glycemic_index = 53
+//    },
+//    new Ingredients 
+//    {
+//        Name = "Фундук",
+//        Calorie_content = 628,
+//        Squirrels = 15,
+//        Fats = 60.8,
+//        Carbohydrates = 7,
+//        Glycemic_index = 15
+//    },
+//     new Ingredients
+//    {
+//        Name = "Творог",
+//        Calorie_content = 82,
+//        Squirrels = 11,
+//        Fats = 2.3,
+//        Carbohydrates = 4.31,
+//        Glycemic_index = 30
+//    },
+//     new Ingredients 
+//     {
+//         Name = "Рукола",
+//        Calorie_content = 24,
+//        Squirrels = 2,
+//        Fats = 1,
+//        Carbohydrates = 2,
+//        Glycemic_index = 32
+//     }
+
+//};
+//_ctx.Ingredients.AddRange(IngredientsList);
+//_ctx.SaveChanges();

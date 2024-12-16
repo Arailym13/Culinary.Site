@@ -6,15 +6,28 @@
 
 <h1>Ингредиенты</h1>
 
-@foreach (var ingredient in Model)
-{
-        <div class="ingredient-block">
-            <p>@ingredient.Name<p/>
-            <p><strong>Калорийность (ККАЛ):</strong> @ingredient.Calorie_content</p>
-            <p><strong>Белки (ГРАММ):</strong> @ingredient.Squirrels</p>
-            <p><strong>Жиры (ГРАММ):</strong> @ingredient.Fats</p>
-            <p><strong>Углеводы (ГРАММ):</strong> @ingredient.Carbohydrates</p>
-            <p><strong>Гликемический индекс:</strong> @ingredient.Glycemic_index</p>
-        </div>
-       
-} 
+<table>
+    <thead>
+        <tr>
+            <th>Наименование</th>
+            <th>Калорийность (ККАЛ)</th>
+            <th>Белки (ГРАММ)</th>
+            <th>Жиры (ГРАММ)</th>
+            <th>Углеводы (ГРАММ)</th>
+            <th>Гликемический индекс</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ingredient in Model)
+        {
+            <tr>
+                <td>@ingredient.Name</td>
+                <td>@ingredient.Calorie_content</td>
+                <td>@ingredient.Squirrels</td>
+                <td>@ingredient.Fats</td>
+                <td>@ingredient.Carbohydrates</td>
+                <td>@ingredient.Glycemic_index</td>
+            </tr>
+        }
+    </tbody>
+</table>
